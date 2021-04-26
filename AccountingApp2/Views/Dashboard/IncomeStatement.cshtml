@@ -1,0 +1,51 @@
+﻿
+@{
+    ViewBag.Title = "IncomeStatement";
+}
+
+<h2>Income Statement</h2>
+<table class="table">
+    <tr>
+    <th>Name</th>
+        <th>Stock Bought</th>
+        <th>Value in USD</th>
+   
+    </tr>
+@{
+    var cnt = 0;
+    foreach (AccountingApp2.DBA.StockOrder stock in ViewBag.Stocks)
+    {
+                <tr>
+                    <td>@ViewBag.StockNames[cnt]</td>
+                    <td>@stock.Value</td>
+                    <td>@ViewBag.Prices1[cnt]</td>
+
+
+                  </tr>
+                            cnt++;
+                        }
+                        }
+</table>
+<table class="table">
+
+    <tr>
+        <th>Name</th>
+        <th>Crypto Bought</th>
+        <th>Value in USD</th>
+
+    </tr>
+    @{
+        var cnt2 = 0;
+        foreach (AccountingApp2.DBA.CryptoOrder stock in ViewBag.Crypto)
+        {
+            <tr>
+                <td>@ViewBag.CryptoNames[cnt2]</td>
+                <td>@stock.Value</td>
+                <td>@ViewBag.Prices2[cnt2]</td>
+
+
+            </tr>
+            cnt2++;
+        }
+    }
+</table>
